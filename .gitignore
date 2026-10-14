@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+.env
+# SQLite databases & temp files
+data/db/*.db
+data/db/*.db-wal
+data/db/*.db-shm
+!data/db/.gitkeep
