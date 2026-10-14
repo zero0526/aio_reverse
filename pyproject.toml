@@ -1,0 +1,20 @@
+[project]
+name = "aio-reverse"
+version = "0.1.0"
+description = "Web & Mobile Reverse Engineering MCP Server focusing on Network Traffic, Cryptography, and Environment Emulation"
+readme = "README.md"
+authors = [
+    { name = "khoenv265", email = "nguyenkhoe2k4@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.7.0",
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+aio-reverse = "aio_reverse.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
