@@ -1,0 +1,95 @@
+{
+  "id": "echo",
+  "version": "0.1.0",
+  "summary": "Echo engine used to conformance-test the sidecar SDKs",
+  "capabilities": {
+    "needs_v8": false,
+    "needs_chrome": false,
+    "needs_network": false,
+    "stateful": true,
+    "concurrency": "per_session",
+    "warmup_ms": 0
+  },
+  "config": {
+    "kind": "json"
+  },
+  "ops": [
+    {
+      "name": "echo",
+      "summary": "Echo a JSON value",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": ["progress"],
+      "deadline_ms": 0
+    },
+    {
+      "name": "execute",
+      "summary": "Echo an execution request",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": ["progress"],
+      "deadline_ms": 0
+    },
+    {
+      "name": "emit",
+      "summary": "Emit an event before replying",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": ["progress", "log"],
+      "deadline_ms": 0
+    },
+    {
+      "name": "bytes",
+      "summary": "Echo the binary frame part",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": [],
+      "deadline_ms": 0
+    },
+    {
+      "name": "fail",
+      "summary": "Raise a typed sidecar error",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": [],
+      "deadline_ms": 0
+    },
+    {
+      "name": "throw",
+      "summary": "Raise a native exception",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": [],
+      "deadline_ms": 0
+    },
+    {
+      "name": "sleep",
+      "summary": "Sleep cooperatively to exercise deadlines",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": [],
+      "deadline_ms": 5000
+    },
+    {
+      "name": "stats",
+      "summary": "Return engine counters and the session config",
+      "params": {"kind": "json"},
+      "returns": {"kind": "json"},
+      "streams": [],
+      "deadline_ms": 0
+    }
+  ],
+  "events": [
+    {
+      "name": "progress",
+      "summary": "Step progress",
+      "data": {"kind": "json"}
+    },
+    {
+      "name": "log",
+      "summary": "Free text from the engine",
+      "data": {"kind": "json"}
+    }
+  ],
+  "types": {}
+}

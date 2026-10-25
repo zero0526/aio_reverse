@@ -1,0 +1,42 @@
+{
+  "protocol": 1,
+  "bundle": "aio",
+  "framing": {
+    "header_bytes": 8,
+    "json_length_field_bytes": 4,
+    "bin_length_field_bytes": 4,
+    "byte_order": "big-endian",
+    "max_json_bytes": 67108864,
+    "max_bin_bytes": 536870912
+  },
+  "envelopes": ["req", "res", "evt", "cancel"],
+  "base_ops": [
+    "hello",
+    "describe",
+    "targets",
+    "metrics",
+    "open",
+    "close",
+    "health",
+    "warmup",
+    "shutdown",
+    "diag"
+  ],
+  "error_kinds": {
+    "bad_input": false,
+    "unsupported": false,
+    "target_drift": false,
+    "blocked": true,
+    "timeout": true,
+    "cancelled": false,
+    "resource": true,
+    "protocol": false,
+    "internal": false
+  },
+  "engine_exception_detail_key": "engine_exception",
+  "schema_hash": {
+    "algorithm": "fnv1a64",
+    "hex_length": 16,
+    "canonical_json": "recursively sorted object keys, compact separators, UTF-8 without ASCII escaping"
+  }
+}

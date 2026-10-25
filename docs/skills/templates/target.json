@@ -1,0 +1,26 @@
+{
+  "name": "<target-name>",
+  "entry_url": "https://example.test/",
+  "login_url": "https://example.test/",
+  "login_expression": "document.querySelector('<signed-in-marker>') !== null",
+  "ready_expression": "Array.from(document.querySelectorAll('<visible-composer>')).some(function (element) { const rect = element.getBoundingClientRect(); return rect.width > 0 && rect.height > 0; })",
+  "network_patterns": ["/api/"],
+  "body_capture_patterns": [],
+  "stream_payloads": false,
+  "env_depth": 4,
+  "chrome_port": 9445,
+  "setup_scripts": ["<setup-script>"],
+  "turn_scripts": ["<turn-script>"],
+  "probe": {
+    "preset": "fingerprint",
+    "properties": [],
+    "methods": [],
+    "events": [],
+    "network": true,
+    "workers": true,
+    "stealth": true,
+    "call_sites": true,
+    "sse": true,
+    "websocket": true
+  }
+}

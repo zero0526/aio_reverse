@@ -1,0 +1,26 @@
+{
+  "name": "fakechat",
+  "entry_url": "http://127.0.0.1:8765/",
+  "login_url": "http://127.0.0.1:8765/",
+  "login_expression": "!!document.querySelector('#prompt-textarea')",
+  "ready_expression": "!!document.querySelector('#prompt-textarea')",
+  "network_patterns": ["/backend-api/"],
+  "body_capture_patterns": ["/backend-api/"],
+  "stream_payloads": true,
+  "env_depth": 2,
+  "chrome_port": 9565,
+  "setup_scripts": ["new_chat"],
+  "turn_scripts": ["send_prompt"],
+  "probe": {
+    "preset": "fingerprint",
+    "properties": [],
+    "methods": [],
+    "events": [],
+    "network": true,
+    "workers": true,
+    "stealth": true,
+    "call_sites": true,
+    "sse": true,
+    "websocket": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "send_prompt",
+  "description": "Type one prompt, send it and wait for the streamed reply to settle",
+  "timeout_s": 240,
+  "actions": [
+    {
+      "type": "count",
+      "selector": "h4[data-conversation-role=\"assistant\"]",
+      "save": "replies_before"
+    },
+    {
+      "type": "type",
+      "selector": "form[data-chatgpt-composer] div.ProseMirror[contenteditable=\"true\"]",
+      "text": "{{prompt}}"
+    },
+    {
+      "type": "click",
+      "selector": "form[data-chatgpt-composer] button[aria-label=\"Send\"]"
+    },
+    {
+      "type": "wait_count",
+      "selector": "h4[data-conversation-role=\"assistant\"]",
+      "greater_than": "{{replies_before}}",
+      "timeout_s": 240
+    },
+    {
+      "type": "wait_hidden",
+      "selector": "button[aria-label=\"Stop\"]",
+      "timeout_s": 240
+    },
+    {
+      "type": "wait_network_quiet",
+      "ms": 2000,
+      "timeout_s": 30
+    }
+  ]
+}

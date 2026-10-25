@@ -1,0 +1,26 @@
+{
+  "name": "chatgpt",
+  "entry_url": "https://chatgpt.com/",
+  "login_url": "https://chatgpt.com/",
+  "login_expression": "document.querySelector('button[aria-label=\"Open profile menu\"]') !== null",
+  "ready_expression": "Array.from(document.querySelectorAll('form[data-chatgpt-composer] div.ProseMirror[contenteditable=\"true\"]')).some((element) => { const rect = element.getBoundingClientRect(); return rect.width > 0 && rect.height > 0; })",
+  "network_patterns": ["/backend-api/", "/conversation", "/sentinel/"],
+  "body_capture_patterns": [],
+  "stream_payloads": false,
+  "env_depth": 4,
+  "chrome_port": 9445,
+  "setup_scripts": ["new_chat"],
+  "turn_scripts": ["send_prompt"],
+  "probe": {
+    "preset": "fingerprint",
+    "properties": [],
+    "methods": [],
+    "events": [],
+    "network": true,
+    "workers": true,
+    "stealth": true,
+    "call_sites": true,
+    "sse": true,
+    "websocket": true
+  }
+}

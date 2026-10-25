@@ -10,7 +10,14 @@ requires-python = ">=3.10"
 dependencies = [
     "pydantic>=2.7.0",
     "mcp>=1.0.0",
+    "aio-sidecar",
+    "wre-runtime",
+    "websockets>=13.0",
 ]
+
+[tool.uv.sources]
+aio-sidecar = { path = "sidecars/python", editable = true }
+wre-runtime = { path = "libs/web-re-toolkit/packages/python", editable = true }
 
 [project.scripts]
 aio-reverse = "aio_reverse.main:main"

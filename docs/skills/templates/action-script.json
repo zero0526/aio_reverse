@@ -1,0 +1,42 @@
+{
+  "name": "<script-name>",
+  "description": "<one line: what this script proves>",
+  "timeout_s": 240,
+  "actions": [
+    {
+      "type": "wait_visible",
+      "selector": "<visible-composer>",
+      "timeout_s": 60
+    },
+    {
+      "type": "count",
+      "selector": "<result-landmark>",
+      "save": "results_before"
+    },
+    {
+      "type": "type",
+      "selector": "<visible-composer>",
+      "text": "{{input}}"
+    },
+    {
+      "type": "click",
+      "selector": "<submit-control>"
+    },
+    {
+      "type": "wait_count",
+      "selector": "<result-landmark>",
+      "greater_than": "{{results_before}}",
+      "timeout_s": 240
+    },
+    {
+      "type": "wait_hidden",
+      "selector": "<busy-indicator>",
+      "timeout_s": 240
+    },
+    {
+      "type": "wait_network_quiet",
+      "ms": 2000,
+      "timeout_s": 30
+    }
+  ]
+}

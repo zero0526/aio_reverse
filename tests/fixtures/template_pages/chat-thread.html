@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo Chat</title>
+    <style>.shell { display: flex; }</style>
+    <script>window.__boot = true;</script>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <a href="/">New chat</a>
+      <a href="/history">History</a>
+      <a href="/settings">Settings</a>
+    </nav>
+    <main class="shell">
+      <header class="topbar">
+        <h1>Demo Chat</h1>
+        <button aria-label="Open profile menu">Account</button>
+      </header>
+      <section class="conversation">
+        <article class="turn" data-role="user">
+          <h4 data-conversation-role="user">You</h4>
+          <p>Summarize the fixture conversation.</p>
+        </article>
+        <article class="turn" data-role="assistant">
+          <h4 data-conversation-role="assistant">Assistant</h4>
+          <p>This synthetic reply stands in for a streamed answer.</p>
+        </article>
+      </section>
+      <section class="composer" data-placement="thread">
+        <form data-chat-composer="true">
+          <div role="textbox" contenteditable="true" aria-label="Message"></div>
+          <button aria-label="Send">Send</button>
+        </form>
+      </section>
+      <div class="server-time">Rendered at 2026-10-25 19:12:49.876</div>
+    </main>
+    <footer class="page-footer">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </footer>
+  </body>
+</html>

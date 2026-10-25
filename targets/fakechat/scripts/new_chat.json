@@ -1,0 +1,15 @@
+{
+  "name": "new_chat",
+  "description": "Clear the fake conversation before the measured turn",
+  "timeout_s": 30,
+  "actions": [
+    {
+      "type": "click",
+      "selector": "[data-testid=\"create-new-chat-button\"]"
+    },
+    {
+      "type": "wait_visible",
+      "selector": "#prompt-textarea"
+    }
+  ]
+}

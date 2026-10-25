@@ -1,3 +1,5 @@
-from .server import McpServerController
+"""MCP adapter: web target tools over stdio."""
 
-__all__ = ["McpServerController"]
+from .server import WebMcpServer, build_server
+
+__all__ = ["WebMcpServer", "build_server"]

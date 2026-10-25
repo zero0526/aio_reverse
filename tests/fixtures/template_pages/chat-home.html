@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo Chat</title>
+    <style>.shell { display: flex; }</style>
+    <script>window.__boot = true;</script>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <a href="/">New chat</a>
+      <a href="/history">History</a>
+      <a href="/settings">Settings</a>
+    </nav>
+    <main class="shell">
+      <header class="topbar">
+        <h1>Demo Chat</h1>
+        <button aria-label="Open profile menu">Account</button>
+      </header>
+      <section class="empty-state">
+        <p>Ask anything to start a conversation.</p>
+      </section>
+      <section class="composer" data-placement="home">
+        <form data-chat-composer="true">
+          <div role="textbox" contenteditable="true" aria-label="Message"></div>
+          <button aria-label="Send">Send</button>
+        </form>
+      </section>
+      <div class="server-time">Rendered at 2026-10-25 19:10:05.123</div>
+    </main>
+    <footer class="page-footer">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </footer>
+  </body>
+</html>

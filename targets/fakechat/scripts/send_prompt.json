@@ -1,0 +1,37 @@
+{
+  "name": "send_prompt",
+  "description": "Type one prompt, send it and wait for the reply to settle",
+  "timeout_s": 60,
+  "actions": [
+    {
+      "type": "count",
+      "selector": "[data-message-author-role=\"assistant\"]",
+      "save": "replies_before"
+    },
+    {
+      "type": "type",
+      "selector": "#prompt-textarea",
+      "text": "{{prompt}}"
+    },
+    {
+      "type": "click",
+      "selector": "[data-testid=\"send-button\"]"
+    },
+    {
+      "type": "wait_count",
+      "selector": "[data-message-author-role=\"assistant\"]",
+      "greater_than": "{{replies_before}}",
+      "timeout_s": 60
+    },
+    {
+      "type": "wait_hidden",
+      "selector": "[data-testid=\"stop-button\"]",
+      "timeout_s": 60
+    },
+    {
+      "type": "wait_network_quiet",
+      "ms": 1200,
+      "timeout_s": 30
+    }
+  ]
+}

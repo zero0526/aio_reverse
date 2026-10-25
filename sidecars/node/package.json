@@ -1,0 +1,16 @@
+{
+  "name": "aio-sidecar-node",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Host SDK for aio_reverse sidecar engines written in JavaScript",
+  "license": "MIT",
+  "type": "module",
+  "main": "./sdk/src/index.js",
+  "exports": {
+    ".": "./sdk/src/index.js",
+    "./engine": "./sdk/src/engine.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

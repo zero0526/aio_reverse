@@ -1,0 +1,21 @@
+{
+  "name": "new_chat",
+  "description": "Open a fresh conversation before the measured turns",
+  "timeout_s": 60,
+  "actions": [
+    {
+      "type": "click",
+      "selector": "button[aria-label=\"New chat\"]"
+    },
+    {
+      "type": "wait_hidden",
+      "selector": "h4[data-conversation-role=\"assistant\"]",
+      "timeout_s": 30
+    },
+    {
+      "type": "wait_visible",
+      "selector": "form[data-chatgpt-composer][data-composer-placement=\"home\"] div.ProseMirror[contenteditable=\"true\"]",
+      "timeout_s": 30
+    }
+  ]
+}
